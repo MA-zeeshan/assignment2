@@ -10,12 +10,10 @@ app.set('view engine', 'ejs');
 
 const connectionString =
   'mongodb+srv://root:toor@cluster0.rkizo1a.mongodb.net/?retryWrites=true&w=majority';
-
 try {
-  await mongoose.connect(connectionString, {
+  mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    connectTimeoutMS: 10000, // 10 seconds
   });
 
   console.log('Connected to MongoDB Atlas');
